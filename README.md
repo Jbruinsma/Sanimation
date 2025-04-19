@@ -7,12 +7,12 @@ Built using `tkinter`, this project allows users to customize the array length a
 
 ## Features
 
--  **Animated Sorting** – Step-by-step visualization of selection sort
+-  **Animated Sorting** – Step-by-step visualization of sorting algorithms
 -  **Color-Coded Bars**:
   -  Red: Currently being compared
   -  Green: Already sorted
   -  White: Unsorted
-- ✍ **User Input** – Customize array length and max value
+- **User Input** – Customize array length, max value, and Sorting Algorithm
 -  **Restart Button** – Reset with new parameters without restarting the app
 -  **Event-Driven Design** – Uses `after()` to simulate smooth animation without freezing the GUI
 
@@ -20,9 +20,6 @@ Built using `tkinter`, this project allows users to customize the array length a
 
 ##  Technologies
 
-- **Language:** Python 
+- **Language:** Python
 - **GUI Library:** `tkinter`
 
----
-
-##  Getting Started
