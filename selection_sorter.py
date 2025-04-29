@@ -1,13 +1,16 @@
-class SelectionSort:
-    def __init__(self, array, canvas):
-        self.array = array
-        self.canvas = canvas
-        self.i = 0
-        self.j = 1
-        self.min_index = 0
-        self.after_id = None
+from sort_component import SortComponent
 
-    def step(self):
+
+class SelectionSort:
+    def __init__(self, array : list[int], canvas : SortComponent) -> None:
+        self.array : list[int] = array
+        self.canvas : SortComponent = canvas
+        self.i : int = 0
+        self.j : int = 1
+        self.min_index : int = 0
+        self.after_id : int | None = None
+
+    def step(self) -> None:
         if self.i >= len(self.array):
             return
 
@@ -27,6 +30,6 @@ class SelectionSort:
                                )
         self.after_id = self.canvas.canvas.after(100, self.step)
 
-    def cancel(self):
+    def cancel(self) -> None:
         if self.after_id:
             self.canvas.canvas.after_cancel(self.after_id)

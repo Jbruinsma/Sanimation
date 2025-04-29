@@ -1,14 +1,17 @@
-class InsertionSort:
-    def __init__(self, array, canvas):
-        self.array = array
-        self.canvas = canvas
-        self.i = 1
-        self.j = 1
-        self.key = array[1]
-        self.after_id = None
-        self.state = "searching"
+from sort_component import SortComponent
 
-    def step(self):
+
+class InsertionSort:
+    def __init__(self, array : list[int], canvas : SortComponent) -> None:
+        self.array : list[int] = array
+        self.canvas : SortComponent = canvas
+        self.i : int = 1
+        self.j : int = 1
+        self.key : int = array[1]
+        self.after_id : int | None = None
+        self.state : str = "searching"
+
+    def step(self) -> None:
         if self.i >= len(self.array):
             return
 
@@ -34,6 +37,6 @@ class InsertionSort:
 
         self.after_id = self.canvas.canvas.after(100, self.step)
 
-    def cancel(self):
+    def cancel(self) -> None:
         if self.after_id:
             self.canvas.canvas.after_cancel(self.after_id)

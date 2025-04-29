@@ -4,21 +4,21 @@ from sort_component import SortComponent
 from random_array import random_array
 import tkinter as tk
 
-sorter= None
+sorter : SelectionSort | InsertionSort | None = None
 
-def start_sorting():
+def start_sorting() -> None:
     global sorter
     if sorter:
         sorter.cancel()
 
     try:
-        length = int(length_entry.get())
-        max_val = int(max_entry.get())
+        length : int = int(length_entry.get())
+        max_val : int = int(max_entry.get())
     except ValueError:
         print("Invalid input!")
         return
 
-    array = random_array(length=length, max_value=max_val)
+    array : list[int] = random_array(length=length, max_value=max_val)
     sort_component.draw_array(array)
 
     if selected_sort.get() == "Selection Sort":
@@ -55,7 +55,7 @@ dropdown_label.pack()
 dropdown = tk.OptionMenu(root, selected_sort, *SORT_OPTIONS)
 dropdown.pack()
 
-sort_component = SortComponent(root)
+sort_component : SortComponent = SortComponent(root)
 
 button = tk.Button(root, text="Restart", command=start_sorting)
 button.pack(pady=10)
